@@ -1,7 +1,7 @@
 # Pedro Pablo Silva
 
-## Educacion
+## Educación
 
-Memorista de Magister en Ingenieria Geografica
-Memorista de Ingenieria Civil Geografica
-Licenciado en Ciencias de la Ingenieria
+- Memorista de Magister en Ingeniería Geográfica
+- Memorista de Ingeniería Civil Geográfica
+- Licenciado en Ciencias de la Ingeniería
