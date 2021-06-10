@@ -5,12 +5,22 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
+	
 	<head>
 		<title>Pedro Pablo Silva</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+		integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+		crossorigin="">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"></script>
+		<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+		<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
+		<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+		
+		
 	</head>
 	<body class="is-preload">
 
@@ -61,6 +71,7 @@
 								<h2 class="major">Work</h2>
 								<span class="image main"><img src="images/pic02.jpg" alt="" /></span>
 								<p>asdasdsa.</p>
+								<div id="map" style="width: 600px; height: 400px;"></div>
 								<p>asdsadasd.</p>
 							</article>
 
@@ -362,6 +373,29 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script type="text/javascript" src="gs_layer.js"></script>
+			<script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+			integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+			crossorigin=""></script>
+			<script>
+
+
+				var map = L.map('map').setView([-70.657688,-33.460487], 12);
+
+				L.geoJson(gs_layer).addTo(map);
+				
+		
+				L.tileLayer('https://tile.openstreetmap.be/osmbe/{z}/{x}/{y}.png', {
+					attribution:
+						'&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors' +
+						', Tiles courtesy of <a href="https://geo6.be/">GEO-6</a>',
+					maxZoom: 18
+				}).addTo(map);
+
+				
+		
+		
+			</script>
 
 	</body>
 </html>
