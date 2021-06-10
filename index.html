@@ -19,6 +19,7 @@
 		<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
 		<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
 		<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+		<meta charset="utf-8" />
 		
 		
 	</head>
@@ -382,15 +383,18 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 				var map = L.map('map').setView([-70.657688,-33.460487], 12);
 
-				L.geoJson(gs_layer).addTo(map);
+				//L.geoJson(gs_layer).addTo(map);
 				
 		
-				L.tileLayer('https://tile.openstreetmap.be/osmbe/{z}/{x}/{y}.png', {
-					attribution:
-						'&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors' +
-						', Tiles courtesy of <a href="https://geo6.be/">GEO-6</a>',
-					maxZoom: 18
-				}).addTo(map);
+				L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+					attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+					maxZoom: 18,
+					id: 'mapbox/streets-v11',
+					tileSize: 512,
+					zoomOffset: -1,
+					accessToken: 'your.mapbox.access.token'
+				}).addTo(mymap);
+
 
 				
 		
