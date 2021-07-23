@@ -71,12 +71,46 @@
 			<script>
 
 
-				var map = L.map('mymap').setView([-33.460487,-70.657688], 11);
+				
 
-				L.geoJson(gs_layer).addTo(map);
+				
+
+				var layers = L.layerGroup();
+
+				var microsimulation = L.geoJSON(gs_layer,{
+												color: 'green'
+												}).addTo(layers);
 		
-				L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
-				}).addTo(map);
+
+				var gray = L.layerGroup();
+
+				var satelital = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+											attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+											}).addTo(gray);
+
+				var OSM = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+										attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>contributors'})
+
+
+				var map = L.map('mymap',{
+					center: [-33.460487,-70.657688],
+					zoom: 11,
+					layers: [gray, layers]
+				});
+
+
+				var bmap = {
+					'Satellite Image': satelital,
+					'OpenStreetMap': OSM
+				};
+
+
+				var overlays = {
+								'Microsimulation layer': microsimulation,
+				};
+
+				var lcontrol = L.control.layers(bmap, overlays
+					).addTo(map);
 
 
 				
