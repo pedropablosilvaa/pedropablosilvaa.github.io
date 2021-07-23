@@ -14,6 +14,7 @@
 		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css" />
 		<script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"></script>
+		
 	</head>
 	<body class="is-preload">
 
@@ -69,10 +70,6 @@
 			<script src="assets/js/main.js"></script>
 			<script type="text/javascript" src="assets/layers/gs_layer.js"></script>
 			<script>
-
-
-				
-
 				
 
 				var layers = L.layerGroup();
@@ -82,35 +79,32 @@
 												}).addTo(layers);
 		
 
-				var gray = L.layerGroup();
+				var tileBaseMap = L.layerGroup();
 
-				var satelital = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+				var satellital = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
 											attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
-											}).addTo(gray);
+											}).addTo(tileBaseMap);
 
-				var OSM = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-										attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>contributors'})
+				var OSM_base = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+										attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>contributors'});
+
+				var bmap = {
+					'<b style="color:black;"> Satellite Image </b>': satellital,
+					'<b style="color:black;"> OpenStreetMap </b>': OSM_base
+				};
 
 
 				var map = L.map('mymap',{
-					center: [-33.460487,-70.657688],
+					center: [-33.495249, -70.639841],
 					zoom: 11,
-					layers: [gray, layers]
+					layers: [tileBaseMap, layers]
 				});
 
-
-				var bmap = {
-					'Satellite Image': satelital,
-					'OpenStreetMap': OSM
-				};
-
-
 				var overlays = {
-								'Microsimulation layer': microsimulation,
+								'<b style="color:black;">Microsimulation layer</b>': microsimulation
 				};
 
-				var lcontrol = L.control.layers(bmap, overlays
-					).addTo(map);
+				var lcontrol = L.control.layers(bmap, overlays,{collapsed: false}).addTo(map);
 
 
 				
