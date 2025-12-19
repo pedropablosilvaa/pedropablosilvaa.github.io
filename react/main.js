@@ -5660,7 +5660,7 @@ function Ff() {
 }
 function Uf() {
   const S = window.__I18N__ || {}, B = window.__BASE_PATH__ || "";
-  return /* @__PURE__ */ M.createElement("div", { className: "contact-section" }, /* @__PURE__ */ M.createElement("h3", null, S.contact_title), /* @__PURE__ */ M.createElement("p", null, S.contact_text), /* @__PURE__ */ M.createElement("div", { className: "actions" }, /* @__PURE__ */ M.createElement("a", { href: "mailto:pedropablosilvaa@gmail.com", className: "button primary" }, "Email Me"), /* @__PURE__ */ M.createElement("a", { href: `${B}/files/CV-pedro-silva-dec-2025.pdf`, className: "button" }, "Download CV")));
+  return /* @__PURE__ */ M.createElement("div", { className: "contact-section" }, /* @__PURE__ */ M.createElement("p", null, S.contact_text), /* @__PURE__ */ M.createElement("div", { className: "actions" }, /* @__PURE__ */ M.createElement("a", { href: "mailto:pedropablosilvaa@gmail.com", className: "button primary" }, "Email Me"), /* @__PURE__ */ M.createElement("a", { href: `${B}/files/CV-pedro-silva-dec-2025.pdf`, className: "button" }, "Download CV")));
 }
 function Af() {
   const S = window.__I18N__ || {};
