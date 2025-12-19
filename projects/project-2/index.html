@@ -1,8 +1,111 @@
-<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Data Analysis with DuckDB – Pedro Pablo Silva</title><link rel=stylesheet href=/css/styles.css><meta name=description content="Analyzing large datasets efficiently using DuckDB and Python."><link rel=canonical href=https://pedropablosilvaa.github.io/projects/project-2/><meta name=robots content="index, follow"></head><body><header class=site-header><div class="container header-flex"><a class=brand href=/>Pedro Pablo Silva</a>
-<button class=menu-toggle aria-label="Toggle navigation">
-☰</button><nav class=main-nav><ul><li><a href=/#about>About Me</a></li><li><a href=/#projects>Projects</a></li><li><a href=/#contact>CV/Contact</a></li><li><a href=/posts/>Blog</a></li></ul></nav><div class=lang-switch><a href=/es/projects/project-2/>Español</a>
-<span class=active-lang>English</span></div></div></header><script>document.addEventListener("DOMContentLoaded",()=>{const e=document.querySelector(".menu-toggle"),t=document.querySelector(".main-nav");e.addEventListener("click",()=>{t.classList.toggle("open")})})</script><main class=container><article class=post><h1>Data Analysis with DuckDB</h1><p class=muted>15 May 2024</p><div class=content><h1 id=data-analysis-with-duckdb>Data Analysis with DuckDB</h1><p>In this project, I explored the capabilities of <strong>DuckDB</strong> for processing analytical queries on local files.</p><h2 id=goal>Goal</h2><p>To reduce the time it takes to aggregate millions of rows of CSV data.</p><h2 id=results>Results</h2><p>DuckDB proved to be orders of magnitude faster than traditional Pandas implementation for this specific use case.</p><h2 id=code-snippet>Code Snippet</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>import</span> duckdb
-</span></span><span style=display:flex><span>con <span style=color:#f92672>=</span> duckdb<span style=color:#f92672>.</span>connect()
-</span></span><span style=display:flex><span>con<span style=color:#f92672>.</span>execute(<span style=color:#e6db74>&#34;SELECT avg(a) FROM &#39;data.csv&#39;&#34;</span>)
-</span></span><span style=display:flex><span>print(con<span style=color:#f92672>.</span>fetchall())
-</span></span></code></pre></div></div><div class=chips></div></article></main><footer class=site-footer><div class=container><p>© 2025 Pedro Pablo Silva · Made with ❤️</p></div></footer></body></html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Data Analysis with DuckDB – Pedro Pablo Silva</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+
+  
+  <meta name="description"
+    content="Analyzing large datasets efficiently using DuckDB and Python." />
+  <link rel="canonical" href="http://localhost:1313/projects/project-2/" />
+  <meta name="robots" content="index, follow" />
+</head>
+
+<body>
+  <header class="site-header">
+  <div class="container header-flex">
+    <a class="brand" href="/">Pedro Pablo Silva</a>
+
+    
+    <button class="menu-toggle" aria-label="Toggle navigation">
+      ☰
+    </button>
+
+    <nav class="main-nav">
+      <ul>
+        
+          <li><a href="/#about">About Me</a></li>
+        
+          <li><a href="/#projects">Projects</a></li>
+        
+          <li><a href="/#contact">CV/Contact</a></li>
+        
+          <li><a href="/posts/">Blog</a></li>
+        
+      </ul>
+    </nav>
+
+    <div class="lang-switch">
+      
+      
+        
+        
+          <span class="active-lang">English</span>
+        
+      
+        
+        
+          
+          
+          
+
+          
+            
+              
+            
+          
+
+          <a href="/es/projects/project-2/">Español</a>
+        
+      
+    </div>
+  </div>
+</header>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.querySelector(".menu-toggle");
+    const nav = document.querySelector(".main-nav");
+    btn.addEventListener("click", () => {
+      nav.classList.toggle("open");
+    });
+  });
+</script>
+
+  <main class="container">
+    
+  <article class="post">
+    <h1>Data Analysis with DuckDB</h1>
+    <p class="muted">15 May 2024</p>
+    
+    <div class="content"><h1 id="data-analysis-with-duckdb">Data Analysis with DuckDB</h1>
+<p>In this project, I explored the capabilities of <strong>DuckDB</strong> for processing analytical queries on local files.</p>
+<h2 id="goal">Goal</h2>
+<p>To reduce the time it takes to aggregate millions of rows of CSV data.</p>
+<h2 id="results">Results</h2>
+<p>DuckDB proved to be orders of magnitude faster than traditional Pandas implementation for this specific use case.</p>
+<h2 id="code-snippet">Code Snippet</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> duckdb
+</span></span><span style="display:flex;"><span>con <span style="color:#f92672">=</span> duckdb<span style="color:#f92672">.</span>connect()
+</span></span><span style="display:flex;"><span>con<span style="color:#f92672">.</span>execute(<span style="color:#e6db74">&#34;SELECT avg(a) FROM &#39;data.csv&#39;&#34;</span>)
+</span></span><span style="display:flex;"><span>print(con<span style="color:#f92672">.</span>fetchall())
+</span></span></code></pre></div></div>
+    <div class="chips">
+      
+    </div>
+  </article>
+
+  </main>
+  <footer class="site-footer">
+  <div class="container">
+    <p>
+      © 2025 Pedro Pablo Silva · Made with ❤️
+    </p>
+  </div>
+</footer>
+</body>
+
+</html>
