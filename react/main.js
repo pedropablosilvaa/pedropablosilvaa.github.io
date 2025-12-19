@@ -5633,7 +5633,7 @@ function Ff() {
   return /* @__PURE__ */ M.createElement("div", null, /* @__PURE__ */ M.createElement(
     "img",
     {
-      src: `${k}/images/pedro-silva-photo.jpeg`,
+      src: `${k}/images/pedro-silva-photo.webp`,
       alt: "Pedro Pablo Silva"
     }
   ));
