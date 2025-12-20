@@ -1,15 +1,11 @@
 :root {
-  --bg: #f8fafc;
-  /* Slate 50 */
-  --text: #1e293b;
-  /* Slate 800 */
-  --muted: #64748b;
-  /* Slate 500 */
-  --accent: #0f766e;
-  /* Teal 700 */
+  --bg: #F8FAFC;
+  --text: #0F172A;
+  --muted: #334155;
+  --accent: #3A5BA0;
+  --natural: #5F7A61;
   --card: #ffffff;
   --border: #e2e8f0;
-  /* Slate 200 */
 }
 
 * {
@@ -118,10 +114,10 @@ nav a:hover {
   font-size: .85rem;
   padding: 4px 10px;
   border-radius: 999px;
-  background: #e8f5e9;
-  color: var(--accent);
+  background: #f1f5f9;
+  color: var(--natural);
   text-decoration: none;
-  border: 1px solid #c8e6c9;
+  border: 1px solid var(--border);
 }
 
 /* Single post */
@@ -163,7 +159,7 @@ nav a:hover {
 .hero h1 {
   font-size: clamp(2rem, 5vw, 3rem);
   margin: 0 0 12px;
-  color: var(--accent);
+  color: var(--text);
 }
 
 .hero p {
@@ -180,9 +176,9 @@ nav a:hover {
 .button {
   padding: 10px 16px;
   border-radius: 8px;
-  border: 1px solid var(--accent);
+  border: 1px solid var(--muted);
   background: #fff;
-  color: var(--accent);
+  color: var(--muted);
   text-decoration: none;
   font-weight: 600;
   transition: all .2s;
@@ -190,6 +186,7 @@ nav a:hover {
 
 .button.primary {
   background: var(--accent);
+  border-color: var(--accent);
   color: #fff;
 }
 
