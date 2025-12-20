@@ -5653,7 +5653,7 @@ function Ff() {
     {
       title: "Tech Blog",
       desc: S.project_desc_techblog || "Technology insights.",
-      link: `${window.__BASE_PATH__ || ""}/projects/tech-blog/`
+      link: `${window.__BASE_PATH__ || ""}/posts/`
     }
   ];
   return /* @__PURE__ */ M.createElement("div", { className: "kgrid" }, F.map((m, Ye) => /* @__PURE__ */ M.createElement("a", { key: Ye, className: "kcard", href: m.link }, /* @__PURE__ */ M.createElement("h3", null, m.title), /* @__PURE__ */ M.createElement("p", null, m.desc))));
