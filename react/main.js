@@ -14,7 +14,7 @@ function Pf() {
    * This source code is licensed under the MIT license found in the
    * LICENSE file in the root directory of this source tree.
    */
-  var S = Symbol.for("react.element"), B = Symbol.for("react.portal"), m = Symbol.for("react.fragment"), Ye = Symbol.for("react.strict_mode"), Fe = Symbol.for("react.profiler"), Xe = Symbol.for("react.provider"), Ge = Symbol.for("react.context"), Le = Symbol.for("react.forward_ref"), pe = Symbol.for("react.suspense"), Ue = Symbol.for("react.memo"), un = Symbol.for("react.lazy"), ie = Symbol.iterator;
+  var S = Symbol.for("react.element"), F = Symbol.for("react.portal"), m = Symbol.for("react.fragment"), Ye = Symbol.for("react.strict_mode"), Fe = Symbol.for("react.profiler"), Xe = Symbol.for("react.provider"), Ge = Symbol.for("react.context"), Le = Symbol.for("react.forward_ref"), pe = Symbol.for("react.suspense"), Ue = Symbol.for("react.memo"), un = Symbol.for("react.lazy"), ie = Symbol.iterator;
   function re(c) {
     return c === null || typeof c != "object" ? null : (c = ie && c[ie] || c["@@iterator"], typeof c == "function" ? c : null);
   }
@@ -43,16 +43,16 @@ function Pf() {
   Ze.constructor = ot, Ae(Ze, $.prototype), Ze.isPureReactComponent = !0;
   var me = Array.isArray, Je = Object.prototype.hasOwnProperty, we = { current: null }, Ee = { key: !0, ref: !0, __self: !0, __source: !0 };
   function Be(c, h, D) {
-    var I, F = {}, U = null, W = null;
-    if (h != null) for (I in h.ref !== void 0 && (W = h.ref), h.key !== void 0 && (U = "" + h.key), h) Je.call(h, I) && !Ee.hasOwnProperty(I) && (F[I] = h[I]);
+    var I, U = {}, A = null, W = null;
+    if (h != null) for (I in h.ref !== void 0 && (W = h.ref), h.key !== void 0 && (A = "" + h.key), h) Je.call(h, I) && !Ee.hasOwnProperty(I) && (U[I] = h[I]);
     var V = arguments.length - 2;
-    if (V === 1) F.children = D;
+    if (V === 1) U.children = D;
     else if (1 < V) {
       for (var G = Array(V), Me = 0; Me < V; Me++) G[Me] = arguments[Me + 2];
-      F.children = G;
+      U.children = G;
     }
-    if (c && c.defaultProps) for (I in V = c.defaultProps, V) F[I] === void 0 && (F[I] = V[I]);
-    return { $$typeof: S, type: c, key: U, ref: W, props: F, _owner: we.current };
+    if (c && c.defaultProps) for (I in V = c.defaultProps, V) U[I] === void 0 && (U[I] = V[I]);
+    return { $$typeof: S, type: c, key: A, ref: W, props: U, _owner: we.current };
   }
   function xt(c, h) {
     return { $$typeof: S, type: c.type, key: h, ref: c.ref, props: c.props, _owner: c._owner };
@@ -70,12 +70,12 @@ function Pf() {
   function Re(c, h) {
     return typeof c == "object" && c !== null && c.key != null ? Qt("" + c.key) : h.toString(36);
   }
-  function qe(c, h, D, I, F) {
-    var U = typeof c;
-    (U === "undefined" || U === "boolean") && (c = null);
+  function qe(c, h, D, I, U) {
+    var A = typeof c;
+    (A === "undefined" || A === "boolean") && (c = null);
     var W = !1;
     if (c === null) W = !0;
-    else switch (U) {
+    else switch (A) {
       case "string":
       case "number":
         W = !0;
@@ -83,27 +83,27 @@ function Pf() {
       case "object":
         switch (c.$$typeof) {
           case S:
-          case B:
+          case F:
             W = !0;
         }
     }
-    if (W) return W = c, F = F(W), c = I === "" ? "." + Re(W, 0) : I, me(F) ? (D = "", c != null && (D = c.replace(it, "$&/") + "/"), qe(F, h, D, "", function(Me) {
+    if (W) return W = c, U = U(W), c = I === "" ? "." + Re(W, 0) : I, me(U) ? (D = "", c != null && (D = c.replace(it, "$&/") + "/"), qe(U, h, D, "", function(Me) {
       return Me;
-    })) : F != null && (ht(F) && (F = xt(F, D + (!F.key || W && W.key === F.key ? "" : ("" + F.key).replace(it, "$&/") + "/") + c)), h.push(F)), 1;
+    })) : U != null && (ht(U) && (U = xt(U, D + (!U.key || W && W.key === U.key ? "" : ("" + U.key).replace(it, "$&/") + "/") + c)), h.push(U)), 1;
     if (W = 0, I = I === "" ? "." : I + ":", me(c)) for (var V = 0; V < c.length; V++) {
-      U = c[V];
-      var G = I + Re(U, V);
-      W += qe(U, h, D, G, F);
+      A = c[V];
+      var G = I + Re(A, V);
+      W += qe(A, h, D, G, U);
     }
-    else if (G = re(c), typeof G == "function") for (c = G.call(c), V = 0; !(U = c.next()).done; ) U = U.value, G = I + Re(U, V++), W += qe(U, h, D, G, F);
-    else if (U === "object") throw h = String(c), Error("Objects are not valid as a React child (found: " + (h === "[object Object]" ? "object with keys {" + Object.keys(c).join(", ") + "}" : h) + "). If you meant to render a collection of children, use an array instead.");
+    else if (G = re(c), typeof G == "function") for (c = G.call(c), V = 0; !(A = c.next()).done; ) A = A.value, G = I + Re(A, V++), W += qe(A, h, D, G, U);
+    else if (A === "object") throw h = String(c), Error("Objects are not valid as a React child (found: " + (h === "[object Object]" ? "object with keys {" + Object.keys(c).join(", ") + "}" : h) + "). If you meant to render a collection of children, use an array instead.");
     return W;
   }
   function st(c, h, D) {
     if (c == null) return c;
-    var I = [], F = 0;
-    return qe(c, I, "", "", function(U) {
-      return h.call(D, U, F++);
+    var I = [], U = 0;
+    return qe(c, I, "", "", function(A) {
+      return h.call(D, A, U++);
     }), I;
   }
   function _e(c) {
@@ -140,9 +140,9 @@ function Pf() {
     return c;
   } }, O.Component = $, O.Fragment = m, O.Profiler = Fe, O.PureComponent = ot, O.StrictMode = Ye, O.Suspense = pe, O.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED = L, O.act = C, O.cloneElement = function(c, h, D) {
     if (c == null) throw Error("React.cloneElement(...): The argument must be a React element, but you passed " + c + ".");
-    var I = Ae({}, c.props), F = c.key, U = c.ref, W = c._owner;
+    var I = Ae({}, c.props), U = c.key, A = c.ref, W = c._owner;
     if (h != null) {
-      if (h.ref !== void 0 && (U = h.ref, W = we.current), h.key !== void 0 && (F = "" + h.key), c.type && c.type.defaultProps) var V = c.type.defaultProps;
+      if (h.ref !== void 0 && (A = h.ref, W = we.current), h.key !== void 0 && (U = "" + h.key), c.type && c.type.defaultProps) var V = c.type.defaultProps;
       for (G in h) Je.call(h, G) && !Ee.hasOwnProperty(G) && (I[G] = h[G] === void 0 && V !== void 0 ? V[G] : h[G]);
     }
     var G = arguments.length - 2;
@@ -152,7 +152,7 @@ function Pf() {
       for (var Me = 0; Me < G; Me++) V[Me] = arguments[Me + 2];
       I.children = V;
     }
-    return { $$typeof: S, type: c.type, key: F, ref: U, props: I, _owner: W };
+    return { $$typeof: S, type: c.type, key: U, ref: A, props: I, _owner: W };
   }, O.createContext = function(c) {
     return c = { $$typeof: Ge, _currentValue: c, _currentValue2: c, _threadCount: 0, Provider: null, Consumer: null, _defaultValue: null, _globalName: null }, c.Provider = { $$typeof: Xe, _context: c }, c.Consumer = c;
   }, O.createElement = Be, O.createFactory = function(c) {
@@ -224,7 +224,7 @@ var Pl = {}, _o = { exports: {} }, Te = {}, Co = { exports: {} }, xo = {};
 var Ea;
 function Tf() {
   return Ea || (Ea = 1, (function(S) {
-    function B(k, L) {
+    function F(k, L) {
       var C = k.length;
       k.push(L);
       e: for (; 0 < C; ) {
@@ -242,9 +242,9 @@ function Tf() {
       if (C !== L) {
         k[0] = C;
         e: for (var c = 0, h = k.length, D = h >>> 1; c < D; ) {
-          var I = 2 * (c + 1) - 1, F = k[I], U = I + 1, W = k[U];
-          if (0 > Fe(F, C)) U < h && 0 > Fe(W, F) ? (k[c] = W, k[U] = C, c = U) : (k[c] = F, k[I] = C, c = I);
-          else if (U < h && 0 > Fe(W, C)) k[c] = W, k[U] = C, c = U;
+          var I = 2 * (c + 1) - 1, U = k[I], A = I + 1, W = k[A];
+          if (0 > Fe(U, C)) A < h && 0 > Fe(W, U) ? (k[c] = W, k[A] = C, c = A) : (k[c] = U, k[I] = C, c = I);
+          else if (A < h && 0 > Fe(W, C)) k[c] = W, k[A] = C, c = A;
           else break e;
         }
       }
@@ -270,7 +270,7 @@ function Tf() {
     function Ze(k) {
       for (var L = m(Ue); L !== null; ) {
         if (L.callback === null) Ye(Ue);
-        else if (L.startTime <= k) Ye(Ue), L.sortIndex = L.expirationTime, B(pe, L);
+        else if (L.startTime <= k) Ye(Ue), L.sortIndex = L.expirationTime, F(pe, L);
         else break;
         L = m(Ue);
       }
@@ -406,7 +406,7 @@ function Tf() {
         default:
           h = 5e3;
       }
-      return h = C + h, k = { id: un++, callback: L, priorityLevel: k, startTime: C, expirationTime: h, sortIndex: -1 }, C > c ? (k.sortIndex = C, B(Ue, k), m(pe) === null && k === m(Ue) && (X ? (vt(Be), Be = -1) : X = !0, b(me, C - c))) : (k.sortIndex = h, B(pe, k), Ae || mt || (Ae = !0, _e(Je))), k;
+      return h = C + h, k = { id: un++, callback: L, priorityLevel: k, startTime: C, expirationTime: h, sortIndex: -1 }, C > c ? (k.sortIndex = C, F(Ue, k), m(pe) === null && k === m(Ue) && (X ? (vt(Be), Be = -1) : X = !0, b(me, C - c))) : (k.sortIndex = h, F(pe, k), Ae || mt || (Ae = !0, _e(Je))), k;
     }, S.unstable_shouldYield = Qt, S.unstable_wrapCallback = function(k) {
       var L = re;
       return function() {
@@ -438,7 +438,7 @@ var Ca;
 function Rf() {
   if (Ca) return Te;
   Ca = 1;
-  var S = za(), B = Lf();
+  var S = za(), F = Lf();
   function m(e) {
     for (var t = "https://reactjs.org/docs/error-decoder.html?invariant=" + e, n = 1; n < arguments.length; n++) t += "&args[]=" + encodeURIComponent(arguments[n]);
     return "Minified React error #" + e + "; visit " + t + " for the full message or use the non-minified dev environment for full errors and additional helpful warnings.";
@@ -601,7 +601,7 @@ function Rf() {
     }
     return (e = e ? e.displayName || e.name : "") ? h(e) : "";
   }
-  function F(e) {
+  function U(e) {
     switch (e.tag) {
       case 5:
         return h(e.type);
@@ -623,7 +623,7 @@ function Rf() {
         return "";
     }
   }
-  function U(e) {
+  function A(e) {
     if (e == null) return null;
     if (typeof e == "function") return e.displayName || e.name || null;
     if (typeof e == "string") return e;
@@ -650,11 +650,11 @@ function Rf() {
         var t = e.render;
         return e = e.displayName, e || (e = t.displayName || t.name || "", e = e !== "" ? "ForwardRef(" + e + ")" : "ForwardRef"), e;
       case st:
-        return t = e.displayName || null, t !== null ? t : U(e.type) || "Memo";
+        return t = e.displayName || null, t !== null ? t : A(e.type) || "Memo";
       case _e:
         t = e._payload, e = e._init;
         try {
-          return U(e(t));
+          return A(e(t));
         } catch {
         }
     }
@@ -684,7 +684,7 @@ function Rf() {
       case 6:
         return "Text";
       case 16:
-        return U(t);
+        return A(t);
       case 8:
         return t === Be ? "StrictMode" : "Mode";
       case 22:
@@ -1147,7 +1147,7 @@ function Rf() {
     }
     return null;
   }
-  var Yo = B.unstable_scheduleCallback, Xo = B.unstable_cancelCallback, ja = B.unstable_shouldYield, Fa = B.unstable_requestPaint, te = B.unstable_now, Ua = B.unstable_getCurrentPriorityLevel, Vl = B.unstable_ImmediatePriority, Go = B.unstable_UserBlockingPriority, Er = B.unstable_NormalPriority, Aa = B.unstable_LowPriority, Zo = B.unstable_IdlePriority, _r = null, at = null;
+  var Yo = F.unstable_scheduleCallback, Xo = F.unstable_cancelCallback, ja = F.unstable_shouldYield, Fa = F.unstable_requestPaint, te = F.unstable_now, Ua = F.unstable_getCurrentPriorityLevel, Vl = F.unstable_ImmediatePriority, Go = F.unstable_UserBlockingPriority, Er = F.unstable_NormalPriority, Aa = F.unstable_LowPriority, Zo = F.unstable_IdlePriority, _r = null, at = null;
   function Ba(e) {
     if (at && typeof at.onCommitFiberRoot == "function") try {
       at.onCommitFiberRoot(_r, e, void 0, (e.current.flags & 128) === 128);
@@ -1385,7 +1385,7 @@ function Rf() {
     Kl = !1, Nt !== null && zr(Nt) && (Nt = null), Pt !== null && zr(Pt) && (Pt = null), zt !== null && zr(zt) && (zt = null), Bn.forEach(ui), Vn.forEach(ui);
   }
   function $n(e, t) {
-    e.blockedOn === t && (e.blockedOn = null, Kl || (Kl = !0, B.unstable_scheduleCallback(B.unstable_NormalPriority, Ga)));
+    e.blockedOn === t && (e.blockedOn = null, Kl || (Kl = !0, F.unstable_scheduleCallback(F.unstable_NormalPriority, Ga)));
   }
   function Wn(e) {
     function t(l) {
@@ -2534,12 +2534,12 @@ function Rf() {
     function x(f, a, d, w) {
       for (var P = null, z = null, T = a, R = a = 0, ce = null; T !== null && R < d.length; R++) {
         T.index > R ? (ce = T, T = null) : ce = T.sibling;
-        var A = v(f, T, d[R], w);
-        if (A === null) {
+        var B = v(f, T, d[R], w);
+        if (B === null) {
           T === null && (T = ce);
           break;
         }
-        e && T && A.alternate === null && t(f, T), a = u(A, a, R), z === null ? P = A : z.sibling = A, z = A, T = ce;
+        e && T && B.alternate === null && t(f, T), a = u(B, a, R), z === null ? P = B : z.sibling = B, z = B, T = ce;
       }
       if (R === d.length) return n(f, T), Z && Zt(f, R), P;
       if (T === null) {
@@ -2555,24 +2555,24 @@ function Rf() {
       var P = L(d);
       if (typeof P != "function") throw Error(m(150));
       if (d = P.call(d), d == null) throw Error(m(151));
-      for (var z = P = null, T = a, R = a = 0, ce = null, A = d.next(); T !== null && !A.done; R++, A = d.next()) {
+      for (var z = P = null, T = a, R = a = 0, ce = null, B = d.next(); T !== null && !B.done; R++, B = d.next()) {
         T.index > R ? (ce = T, T = null) : ce = T.sibling;
-        var Wt = v(f, T, A.value, w);
+        var Wt = v(f, T, B.value, w);
         if (Wt === null) {
           T === null && (T = ce);
           break;
         }
         e && T && Wt.alternate === null && t(f, T), a = u(Wt, a, R), z === null ? P = Wt : z.sibling = Wt, z = Wt, T = ce;
       }
-      if (A.done) return n(
+      if (B.done) return n(
         f,
         T
       ), Z && Zt(f, R), P;
       if (T === null) {
-        for (; !A.done; R++, A = d.next()) A = g(f, A.value, w), A !== null && (a = u(A, a, R), z === null ? P = A : z.sibling = A, z = A);
+        for (; !B.done; R++, B = d.next()) B = g(f, B.value, w), B !== null && (a = u(B, a, R), z === null ? P = B : z.sibling = B, z = B);
         return Z && Zt(f, R), P;
       }
-      for (T = r(f, T); !A.done; R++, A = d.next()) A = E(T, f, R, A.value, w), A !== null && (e && A.alternate !== null && T.delete(A.key === null ? R : A.key), a = u(A, a, R), z === null ? P = A : z.sibling = A, z = A);
+      for (T = r(f, T); !B.done; R++, B = d.next()) B = E(T, f, R, B.value, w), B !== null && (e && B.alternate !== null && T.delete(B.key === null ? R : B.key), a = u(B, a, R), z === null ? P = B : z.sibling = B, z = B);
       return e && T.forEach(function(xf) {
         return t(f, xf);
       }), Z && Zt(f, R), P;
@@ -3222,7 +3222,7 @@ function Rf() {
     try {
       var n = "", r = t;
       do
-        n += F(r), r = r.return;
+        n += U(r), r = r.return;
       while (r);
       var l = n;
     } catch (u) {
@@ -5603,8 +5603,8 @@ function Mf() {
     if (!(typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ == "undefined" || typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE != "function"))
       try {
         __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE(S);
-      } catch (B) {
-        console.error(B);
+      } catch (F) {
+        console.error(F);
       }
   }
   return S(), _o.exports = Rf(), _o.exports;
@@ -5618,28 +5618,28 @@ function Df() {
 }
 var Of = Df();
 function If() {
-  const S = window.__I18N__ || {}, B = window.__BASE_PATH__ || "";
+  const S = window.__I18N__ || {}, F = window.__BASE_PATH__ || "", m = window.__ASSET_PATH__ || "/";
   return /* @__PURE__ */ M.createElement(
     "section",
     {
       className: "hero hero-banner full-bleed",
-      style: { "--hero": `url('${B}/images/hero-image.webp')`, "--hero-x": "50%", "--hero-y": "50%" }
+      style: { "--hero": `url('${m}images/hero-image.webp')`, "--hero-x": "50%", "--hero-y": "50%" }
     },
-    /* @__PURE__ */ M.createElement("div", { className: "container" }, /* @__PURE__ */ M.createElement("h1", null, S.intro_title || "Pedro Pablo Silva"), /* @__PURE__ */ M.createElement("p", null, S.intro_sub || "Desarrollador-..."), /* @__PURE__ */ M.createElement("div", { className: "cta" }, /* @__PURE__ */ M.createElement("a", { className: "button primary", href: "#projects" }, S.btn_projects || "Ver Proyectos"), /* @__PURE__ */ M.createElement("a", { className: "button", href: `${B}/posts/` }, S.btn_blog || "Blog"), /* @__PURE__ */ M.createElement("a", { className: "button", href: "#about" }, S.about_title || "Sobre mí"), /* @__PURE__ */ M.createElement("a", { className: "button", href: "#contact" }, S.contact_title || "Contacto")))
+    /* @__PURE__ */ M.createElement("div", { className: "container" }, /* @__PURE__ */ M.createElement("h1", null, S.intro_title || "Pedro Pablo Silva"), /* @__PURE__ */ M.createElement("p", null, S.intro_sub || "Desarrollador-..."), /* @__PURE__ */ M.createElement("div", { className: "cta" }, /* @__PURE__ */ M.createElement("a", { className: "button primary", href: "#projects" }, S.btn_projects || "Ver Proyectos"), /* @__PURE__ */ M.createElement("a", { className: "button", href: `${F}/posts/` }, S.btn_blog || "Blog"), /* @__PURE__ */ M.createElement("a", { className: "button", href: "#about" }, S.about_title || "Sobre mí"), /* @__PURE__ */ M.createElement("a", { className: "button", href: "#contact" }, S.contact_title || "Contacto")))
   );
 }
 function jf() {
-  const S = window.__BASE_PATH__ || "";
+  const S = window.__ASSET_PATH__ || "/";
   return /* @__PURE__ */ M.createElement("div", null, /* @__PURE__ */ M.createElement(
     "img",
     {
-      src: `${S}/images/pedro-silva-photo.webp`,
+      src: `${S}images/pedro-silva-photo.webp`,
       alt: "Pedro Pablo Silva Antilef"
     }
   ));
 }
 function Ff() {
-  const S = window.__I18N__ || {}, B = [
+  const S = window.__I18N__ || {}, F = [
     {
       title: "ESO - Paranal Armazones",
       desc: S.project_desc_eso || "Scientific & Engineering work at ESO.",
@@ -5656,15 +5656,15 @@ function Ff() {
       link: `${window.__BASE_PATH__ || ""}/projects/tech-blog/`
     }
   ];
-  return /* @__PURE__ */ M.createElement("div", { className: "kgrid" }, B.map((m, Ye) => /* @__PURE__ */ M.createElement("a", { key: Ye, className: "kcard", href: m.link }, /* @__PURE__ */ M.createElement("h3", null, m.title), /* @__PURE__ */ M.createElement("p", null, m.desc))));
+  return /* @__PURE__ */ M.createElement("div", { className: "kgrid" }, F.map((m, Ye) => /* @__PURE__ */ M.createElement("a", { key: Ye, className: "kcard", href: m.link }, /* @__PURE__ */ M.createElement("h3", null, m.title), /* @__PURE__ */ M.createElement("p", null, m.desc))));
 }
 function Uf() {
-  const S = window.__I18N__ || {}, B = window.__BASE_PATH__ || "";
-  return /* @__PURE__ */ M.createElement("div", { className: "contact-section" }, /* @__PURE__ */ M.createElement("p", null, S.contact_text), /* @__PURE__ */ M.createElement("div", { className: "actions" }, /* @__PURE__ */ M.createElement("a", { href: "mailto:pedropablosilvaa@gmail.com", className: "button primary" }, "Email Me"), /* @__PURE__ */ M.createElement("a", { href: `${B}/files/CV-pedro-silva-dec-2025.pdf`, className: "button" }, "Download CV")));
+  const S = window.__I18N__ || {}, F = window.__ASSET_PATH__ || "/";
+  return /* @__PURE__ */ M.createElement("div", { className: "contact-section" }, /* @__PURE__ */ M.createElement("p", null, S.contact_text), /* @__PURE__ */ M.createElement("div", { className: "actions" }, /* @__PURE__ */ M.createElement("a", { href: "mailto:pedropablosilvaa@gmail.com", className: "button primary" }, "Email Me"), /* @__PURE__ */ M.createElement("a", { href: `${F}files/CV-pedro-silva-dec-2025.pdf`, className: "button" }, "Download CV")));
 }
 function Af() {
   const S = window.__I18N__ || {};
-  return /* @__PURE__ */ M.createElement("div", null, /* @__PURE__ */ M.createElement(If, null), /* @__PURE__ */ M.createElement("section", { id: "about", className: "section" }, /* @__PURE__ */ M.createElement("div", { className: "container" }, /* @__PURE__ */ M.createElement("div", { className: "about" }, /* @__PURE__ */ M.createElement("div", null, /* @__PURE__ */ M.createElement("h2", { className: "section-title" }, S.about_title || "About Me"), /* @__PURE__ */ M.createElement("p", { className: "intro highlight" }, S.about_text || "About text..."), /* @__PURE__ */ M.createElement("div", { style: { marginTop: "24px" } }, /* @__PURE__ */ M.createElement("h3", { style: { fontSize: "1.1rem", color: "var(--accent)", marginBottom: "12px" } }, S.edu_title || "Education"), /* @__PURE__ */ M.createElement("ul", { style: { listStyle: "none", padding: 0, margin: 0, color: "var(--muted)", fontSize: "0.95rem" } }, /* @__PURE__ */ M.createElement("li", { style: { marginBottom: "6px" } }, "• ", S.edu_3), /* @__PURE__ */ M.createElement("li", { style: { marginBottom: "6px" } }, "• ", S.edu_2), /* @__PURE__ */ M.createElement("li", { style: { marginBottom: "6px" } }, "• ", S.edu_1)))), /* @__PURE__ */ M.createElement(jf, null)))), /* @__PURE__ */ M.createElement("section", { id: "projects", className: "section" }, /* @__PURE__ */ M.createElement("div", { className: "container" }, /* @__PURE__ */ M.createElement("h2", { className: "section-title" }, S.projects_title || "Projects"), /* @__PURE__ */ M.createElement(Ff, null))), /* @__PURE__ */ M.createElement("section", { id: "contact", className: "section" }, /* @__PURE__ */ M.createElement("div", { className: "container" }, /* @__PURE__ */ M.createElement("h2", { className: "section-title" }, S.contact_title || "CV & Contact"), /* @__PURE__ */ M.createElement(Uf, null))));
+  return /* @__PURE__ */ M.createElement("div", null, /* @__PURE__ */ M.createElement(If, null), /* @__PURE__ */ M.createElement("section", { id: "about", className: "section" }, /* @__PURE__ */ M.createElement("div", { className: "container" }, /* @__PURE__ */ M.createElement("div", { className: "about" }, /* @__PURE__ */ M.createElement("div", null, /* @__PURE__ */ M.createElement("h2", { className: "section-title" }, S.about_title || "About Me"), /* @__PURE__ */ M.createElement("div", { className: "intro highlight" }, (S.about_text || "About text...").split(/\\n|\n/).map((F, m) => F ? /* @__PURE__ */ M.createElement("p", { key: m, style: { marginBottom: "1em" } }, F) : null)), /* @__PURE__ */ M.createElement("div", { style: { marginTop: "24px" } }, /* @__PURE__ */ M.createElement("h3", { style: { fontSize: "1.1rem", color: "var(--accent)", marginBottom: "12px" } }, S.edu_title || "Education"), /* @__PURE__ */ M.createElement("ul", { style: { listStyle: "none", padding: 0, margin: 0, color: "var(--muted)", fontSize: "0.95rem" } }, /* @__PURE__ */ M.createElement("li", { style: { marginBottom: "6px" } }, "• ", S.edu_3), /* @__PURE__ */ M.createElement("li", { style: { marginBottom: "6px" } }, "• ", S.edu_2), /* @__PURE__ */ M.createElement("li", { style: { marginBottom: "6px" } }, "• ", S.edu_1)))), /* @__PURE__ */ M.createElement(jf, null)))), /* @__PURE__ */ M.createElement("section", { id: "projects", className: "section" }, /* @__PURE__ */ M.createElement("div", { className: "container" }, /* @__PURE__ */ M.createElement("h2", { className: "section-title" }, S.projects_title || "Projects"), /* @__PURE__ */ M.createElement(Ff, null))), /* @__PURE__ */ M.createElement("section", { id: "contact", className: "section" }, /* @__PURE__ */ M.createElement("div", { className: "container" }, /* @__PURE__ */ M.createElement("h2", { className: "section-title" }, S.contact_title || "CV & Contact"), /* @__PURE__ */ M.createElement(Uf, null))));
 }
 const Pa = document.getElementById("i18n");
 window.__I18N__ = Pa ? JSON.parse(Pa.textContent) : {};
@@ -5672,8 +5672,8 @@ window.__BASE_PATH__ = window.__BASE_PATH__ || "";
 const Bf = (S) => typeof S == "string" ? S.replace(/^[\s"“”'‘’]+|[\s"“”'‘’]+$/g, "") : S;
 if (window.__I18N__) {
   const S = {};
-  for (const [B, m] of Object.entries(window.__I18N__))
-    S[B] = Bf(m);
+  for (const [F, m] of Object.entries(window.__I18N__))
+    S[F] = Bf(m);
   window.__I18N__ = S;
 }
 typeof window != "undefined" && typeof window.process == "undefined" && (window.process = { env: { NODE_ENV: "production" } });
