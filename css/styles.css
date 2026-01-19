@@ -129,6 +129,11 @@ nav a:hover {
   border: 1px solid var(--border);
 }
 
+.content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
 .content img,
 .content video {
   max-width: 100%;
